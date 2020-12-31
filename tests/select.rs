@@ -1,8 +1,6 @@
 use dialoguer::{theme::ColorfulTheme, Select};
 
 use enigo::{Enigo, Key, KeyboardControllable};
-use std::thread;
-use std::time::Duration;
 
 #[test]
 fn basic_navigation_produces_correct_selection() {
@@ -16,7 +14,6 @@ fn basic_navigation_produces_correct_selection() {
     let mut enigo = Enigo::new();
     enigo.key_click(Key::Layout('j'));
     enigo.key_down(Key::Return);
-    thread::sleep(Duration::from_millis(10));
     enigo.key_up(Key::Return);
 
     let selection = Select::with_theme(&ColorfulTheme::default())
