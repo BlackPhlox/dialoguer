@@ -12,9 +12,8 @@ fn basic_navigation_produces_correct_selection() {
     ];
 
     let mut enigo = Enigo::new();
-    enigo.key_click(Key::Layout('j'));
+    enigo.key_down(Key::Layout('j'));
     enigo.key_down(Key::Return);
-    enigo.key_up(Key::Return);
 
     let selection = Select::with_theme(&ColorfulTheme::default())
         .with_prompt("Optionally pick your flavor")
