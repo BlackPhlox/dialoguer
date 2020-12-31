@@ -1,4 +1,4 @@
-use dialoguer::{theme::ColorfulTheme, Select};
+use dialoguer::{theme::TestTheme, Select};
 
 use enigo::{Enigo, Key, KeyboardControllable};
 
@@ -15,8 +15,7 @@ fn basic_navigation_produces_correct_selection() {
     enigo.key_down(Key::Layout('j'));
     enigo.key_down(Key::Return);
 
-    let selection = Select::with_theme(&ColorfulTheme::default())
-        .with_prompt("Optionally pick your flavor")
+    let selection = Select::with_theme(&TestTheme::default())
         .default(0)
         .items(&selections[..])
         .interact_opt()

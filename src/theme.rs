@@ -712,3 +712,18 @@ impl<'a> TermThemeRenderer<'a> {
         Ok(())
     }
 }
+
+pub struct TestTheme {
+
+}
+
+impl Theme for TestTheme {
+
+}
+
+impl Default for TestTheme {
+    fn default() -> TestTheme {
+        TestTheme {
+        }
+    }
+}
